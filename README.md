@@ -9,9 +9,21 @@
 
 oneT 账单生成器是一个 Python 桌面工具，用于生成**模拟/样例**金融与账单类文档，包括银行对账单、加密货币账户月结单、能源账单等。生成的文档可供设计稿填充、前端开发测试、数据模型验证、自动化测试夹具、文档生成技术研究等非商业个人场景使用。
 
-- **Github / 项目仓库**：内部工具，未公开发布
-- **技术栈**：Python 3 + tkinter GUI + Playwright 渲染 + 本地 HTML 模板引擎
-- **输出格式**：PDF、PNG、HTML
+- **GitHub**: [UserNmaeF/oneT](https://github.com/UserNmaeF/oneT)
+- **技术栈**: Python 3 + tkinter GUI + Playwright 渲染 + 本地 HTML 模板引擎
+- **输出格式**: PDF、PNG、HTML
+
+---
+
+## 样例预览
+
+| Monzo Bank Statement | Kraken Statement | Wise EUR Statement |
+|:---:|:---:|:---:|
+| ![Monzo](./assets/sample-monzo.png) | ![Kraken](./assets/sample-kraken.png) | ![Wise DE](./assets/sample-wise-de.png) |
+
+| Octopus Energy Bill | MariBank Statement |
+|:---:|:---:|
+| ![Octopus](./assets/sample-octopus.png) | ![MariBank](./assets/sample-maribank.png) |
 
 ---
 
@@ -110,7 +122,7 @@ python cli.py validate --type gb-monzo
 | `de-wise` | Wise EUR Statement (DE) | 德国 | EUR | 银行 |
 | `gb-wisegbpstatementuk` | Wise GBP Statement (UK) | 英国 | GBP | 银行 |
 | `gb-octopusenergybill` | Octopus Energy Bill | 英国 | GBP | 能源 |
-| `ph-seabank` | SeaBank Statement | 菲律宾 | PHP | 银行 |
+| `ph-seabank` | MariBank Statement | 菲律宾 | PHP | 银行 |
 | `de-monese` | Monese EUR Statement (DE) | 德国 | EUR | 银行 |
 
 ---
@@ -160,12 +172,23 @@ oneT/
 
 ---
 
-## 免责声明
+## 许可证
 
-**重要：** 本工具生成的文档均为模拟数据，严禁用于冒充真实账单、欺诈、骗贷或任何违法用途。详细免责条款请参阅 [DISCLAIMER.md](./DISCLAIMER.md)。
+本项目按"原样"提供，不提供任何明示或暗示担保。详见 [DISCLAIMER.md](./DISCLAIMER.md)。
 
 ---
 
-## 许可
+## ⭐ 支持项目
 
-本项目按"原样"提供，不提供任何明示或暗示担保。详见 [DISCLAIMER.md](./DISCLAIMER.md)。
+如果你觉得这个项目对你有帮助，欢迎给个 **Star** ⭐！
+
+你的支持是持续改进的动力，感谢每一位贡献者！
+
+[![GitHub stars](https://img.shields.io/github/stars/UserNmaeF/oneT?style=social)](https://github.com/UserNmaeF/oneT)
+[![GitHub forks](https://img.shields.io/github/forks/UserNmaeF/oneT?style=social)](https://github.com/UserNmaeF/oneT)
+
+---
+
+## 免责声明
+
+**重要：** 本工具生成的文档均为模拟数据，严禁用于冒充真实账单、欺诈、骗贷或任何违法用途。详细免责条款请参阅 [DISCLAIMER.md](./DISCLAIMER.md)。
