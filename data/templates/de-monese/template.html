@@ -1,0 +1,112 @@
+<div class="monese-stmt">
+  <div class="header">
+    <div class="header-left">
+      <svg viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg" aria-label="Monese logo" class="logo-icon">
+        <g fill="none" stroke="#0C70DF" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3.5 34V8.5c0-4 4.8-6 7.7-3.1L24 18.4 36.8 5.3c2.9-2.9 7.7-.9 7.7 3.1V34"/>
+          <path d="M4.7 6.6 20.8 33c1.5 2.5 4.9 2.6 6.5.1L43.2 6.6"/>
+          <path d="M4.2 33.2c1.7 2 4.8 2.1 6.7.2L24 20.2l13.1 13.2c1.8 1.9 4.9 1.8 6.7-.2"/>
+        </g>
+      </svg>
+      <span class="logo-name">monese</span>
+    </div>
+    <div class="header-info">
+      <div class="customer-info">
+        <div class="customer-name">{{customer_name}}</div>
+        <div>{{address_street}}</div>
+        <div>{{address_state}}</div>
+        <div>{{postal_code}}</div>
+        <div>{{address_district}}</div>
+        <div>{{country}}</div>
+      </div>
+      <div class="account-info">
+        <div class="info-group">
+          <div class="label">IBAN</div>
+          <div class="val">{{iban}}</div>
+        </div>
+        <div class="info-group">
+          <div class="label">BIC</div>
+          <div class="val">{{bic}}</div>
+        </div>
+        <div class="info-group">
+          <div class="label">Monese ID</div>
+          <div class="val">{{monese_id}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="title-block">
+    <h1 class="statement-title">EUR statement</h1>
+    <div class="statement-period">{{statement_period}}</div>
+  </div>
+
+  <div class="summary-section">
+    <div class="summary-row opening">
+      <span class="summary-label">Opening balance</span>
+      <span class="summary-amount">{{currency}}{{opening_balance}}</span>
+    </div>
+    <div class="summary-group">
+      <div class="summary-row">
+        <span class="summary-label">Payments in</span>
+        <span class="summary-amount">+{{currency}}{{total_credits}}</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Payments out</span>
+        <span class="summary-amount">-{{currency}}{{total_debits}}</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Pending payments</span>
+        <span class="summary-amount">-{{currency}}0.00</span>
+      </div>
+    </div>
+    <div class="summary-row closing">
+      <span class="summary-label">Closing balance</span>
+      <span class="summary-amount">{{currency}}{{closing_balance}}</span>
+    </div>
+  </div>
+
+  <div class="transactions-section">
+    <h2 class="transactions-title">Transactions</h2>
+    <table class="txn-table">
+      <thead>
+        <tr>
+          <th class="th-proc">Processed date</th>
+          <th class="th-pay">Payment made</th>
+          <th class="th-desc">Description</th>
+          <th class="th-amt r">Amount</th>
+          <th class="th-bal r">Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{transactions}}
+      </tbody>
+    </table>
+    <div class="txn-closing-bar">
+      <div class="closing-row">
+        <span class="closing-label">Closing balance</span>
+        <span class="closing-amt">{{currency}}{{closing_balance}}</span>
+      </div>
+      <div class="closing-divider-bottom"></div>
+    </div>
+  </div>
+
+  <div class="statement-footer">
+    <p class="legal-text">Monese EU SA (a company registered in Belgium with number 0771.559.576; head office: Avenue Arnaud Fraiteur 15-23, 1050 Ixelles, Belgium, authorised by the National Bank of Belgium with Agent ID PPSEBEA000002) is a registered agent of PPS EU SA a company registered in Belgium (number 0712.775.202; RLE Brussels, French-language Division) and its head office at 1160 Brussels, Vorstlaan 165 bus 9 / boulevard du Souverain 165 boîte 9, Belgium which is an electronic money institution authorised by the National Bank of Belgium (firm reference number 0712.775.202) for the issuing of electronic money and provision of payment services.</p>
+    <div class="footer-columns">
+      <div class="footer-entity">
+        <strong>Monese EU SA</strong><br>
+        Avenue Arnaud Fraiteur<br>
+        15-23<br>
+        1050 Ixelles<br>
+        Belgium
+      </div>
+      <div class="footer-contact">
+        <strong>We are here for you!</strong><br>
+        www.monese.com<br>
+        +44 (0) 1706 304 001<br>
+        support@monese.com
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.table-header{display:flex;justify-content:space-between;padding:10px 0;font-size:12px;font-weight:700;color:#4a4a4a;}
+.th-right{display:flex;justify-content:flex-end;width:50%;}
+.th-right span{width:33.33%;text-align:right;}
+.th-left{width:50%;}
+.txn-row{display:flex;font-size:13px;line-height:1.8;color:#333;}
+
+.txn-row .td-desc{flex:4;}
+.txn-row .td-in{flex:1;text-align:right;}
+.txn-row .td-out{flex:1;text-align:right;}
+.txn-row .td-bal{flex:1;text-align:right;}
+.txn-title{font-size:13px;font-weight:600;color:#1a1a1a;}
+.txn-meta{font-size:10px;color:#888;line-height:1.4;}

@@ -1,0 +1,10 @@
+.monzo-stmt a{color:#555!important;text-decoration:none!important;}
+.monzo-stmt .bank-table{width:100%;border-collapse:collapse;font-size:11px;}
+.monzo-stmt .bank-table th{padding:6px 8px;font-weight:600;font-size:10px;color:#555;border-bottom:1px solid #ddd;text-align:right;}
+.monzo-stmt .bank-table th:first-child{text-align:left;}
+.monzo-stmt .bank-table th:nth-child(2){text-align:left;}
+.monzo-stmt .bank-table td{padding:6px 8px;border-bottom:1px solid #eee;text-align:right;vertical-align:middle;}
+.monzo-stmt .bank-table td:first-child{text-align:left;white-space:nowrap;}
+.monzo-stmt .bank-table td:nth-child(2){text-align:left;}
+.monzo-stmt .bank-table td.credit{color:#2e7d32;font-weight:600;}
+.monzo-stmt .bank-table td.debit{color:#c62828;font-weight:600;}

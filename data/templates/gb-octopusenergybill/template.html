@@ -1,0 +1,269 @@
+<div class="octopus-wrap">
+    <!-- PAGE 1 -->
+    <div class="page">
+        <div class="header">
+            <div class="logo"><strong>octopus</strong><span>energy</span></div>
+        </div>
+
+        <div class="content-grid">
+            <div class="left-col">
+                <div class="address">
+                    {{customer_name}}<br>
+                    {{address_unit}}<br>
+                    {{address_street}}<br>
+                    {{address_district}}<br>
+                    {{postal_code}}
+                </div>
+
+                <h1>Your energy account</h1>
+                <div class="date-range">{{period_start}} - {{period_end}}</div>
+
+                <div class="balance-box">
+                    <div><strong>On</strong> <span>{{period_start}}</span></div>
+                    <div><strong>your previous balance was</strong></div>
+                    <div>{{previous_balance}}</div>
+                </div>
+
+                <hr>
+
+                <div class="transactions">
+                    {{transactions_section}}
+                </div>
+
+                <hr>
+
+                <div class="balance-box">
+                    <div><strong>On</strong> <span>{{period_end}}</span></div>
+                    <div><strong>your new balance is</strong></div>
+                    <div>{{new_balance}}</div>
+                </div>
+
+                <p style="margin-top: 15px; font-size: 11px;">
+                    {{direct_debit_note}}
+                </p>
+            </div>
+
+            <div class="right-col">
+                <div class="account-info">
+                    Your Account Number: {{account_number}}<br>
+                    Bill Reference: {{bill_number}} ({{issue_date}})
+                </div>
+
+                <div class="side-box">
+                    <h3>Could you pay less?</h3>
+                    <p class="italic">Remember - it might be worth thinking<br>about switching your tariff or supplier.</p>
+                </div>
+
+                <div class="side-box">
+                    <h3>Emergency numbers</h3>
+                    <p>Smell gas? Call <strong>0800 111 999</strong><br>
+                    Power cut? Call <strong>105</strong> to get help<br>
+                    <strong>Your Electricity Distributor is:</strong><br>
+                    {{distributor}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-col">
+                <strong>Octopus Energy Limited</strong>
+                <span>W</span> octopus.energy<br>
+                <span>E</span> hello@octopus.energy<br>
+                <span>P</span> 0808 164 1088
+            </div>
+            <div class="footer-col">
+                <strong>Registered Office</strong>
+                UK House, 5th floor, 164-182 Oxford Street,<br>
+                London, W1D 1NN
+            </div>
+            <div class="footer-col" style="text-align: right;">
+                Registered in England & Wales No. 09263424<br>
+                VAT Number: 358672751
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page">
+        <div class="header">
+            <div class="logo"><strong>octopus</strong><span>energy</span></div>
+        </div>
+
+        <div class="pg2-grid">
+            <div class="pg2-col">
+                <h2>Contacting us</h2>
+                <p>Contact us by email and get a response within hours.<br>
+                Of course, if you need to you can also get a hold of us<br>
+                on the phone, or even by post.</p>
+
+                <p><strong>Email:</strong> hello@octopus.energy</p>
+                <p><strong>Phone:</strong> 0808 164 1088</p>
+                <p><strong>Trading office:</strong> UK House, 5th floor, 164-182 Oxford<br>
+                Street, London, W1D 1NN</p>
+
+                <p>Please don't hesitate to contact us if you've any<br>
+                questions, comments, or complaints.</p>
+
+                <h2 style="margin-top: 25px;">Your Charges In Detail</h2>
+                <p>This is your bill for electricity at the meter detailed below. Your tariff is <strong>{{tariff_name}}</strong>.</p>
+
+                <table class="supply-table">
+                    <tr>
+                        <td>Supply Number (MPAN)</td>
+                        <td>{{supply_number}} &nbsp;<span style="color:#666;">({{mpan}})</span></td>
+                    </tr>
+                    <tr>
+                        <td>Supply Address</td>
+                        <td>{{supply_address}}</td>
+                    </tr>
+                    <tr>
+                        <td>Meter serial number</td>
+                        <td>{{meter_serial}}</td>
+                    </tr>
+                    <tr>
+                        <td>Meter reading type</td>
+                        <td>{{reading_type}}</td>
+                    </tr>
+                    <tr>
+                        <td>Opening reading ({{period_start}})</td>
+                        <td>{{opening_reading}} kWh</td>
+                    </tr>
+                    <tr>
+                        <td>Closing reading ({{period_end}})</td>
+                        <td>{{closing_reading}} kWh</td>
+                    </tr>
+                    <tr>
+                        <td>Electricity used</td>
+                        <td>{{kwh_used}} kWh over {{billing_days}} days</td>
+                    </tr>
+                    <tr>
+                        <td>Unit rate</td>
+                        <td>{{unit_rate}}p/kWh</td>
+                    </tr>
+                    <tr>
+                        <td>Standing charge</td>
+                        <td>{{standing_charge}}p/day</td>
+                    </tr>
+                    <tr>
+                        <td>About Your Tariff — Product</td>
+                        <td>{{tariff_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Payment method</td>
+                        <td>{{payment_method}}</td>
+                    </tr>
+                    <tr>
+                        <td>Estimated Annual Usage</td>
+                        <td>{{eau_kwh}} kWh / ~{{eau_cost}} a year</td>
+                    </tr>
+                </table>
+
+                <p>Please visit our website for advice on how to save<br>
+                energy in your home.</p>
+            </div>
+
+            <div class="pg2-col" style="font-size: 11.5px;">
+                <div style="margin-bottom: 20px;">
+                    Your Account Number: {{account_number}}<br>
+                    Bill Reference: {{bill_number}} ({{issue_date}})
+                </div>
+
+                <h2 style="font-size: 14px;">Advice and complaints</h2>
+                <p>Contact Citizens Advice if you need help with an<br>
+                energy problem - for example with your bills or<br>
+                meters, or if you're struggling to pay for the energy<br>
+                you use. They're the official source of free and<br>
+                independent energy advice and support.</p>
+
+                <p>Go to: citizensadvice.org.uk/energy or call their<br>
+                consumer service on 0808 223 1133 Mon to Fri,<br>
+                9am-5pm</p>
+
+                <p>Or, if you live in Scotland, you can contact<br>
+                energyadvice.scot for independent help.</p>
+
+                <p>Go to: energyadvice.scot/email-us, or call their<br>
+                customer service on 0808 196 8660 Monday to<br>
+                Friday, 9am to 5pm.</p>
+
+                <p>If you feel that our service has not met your<br>
+                expectations, please get in touch so we can put<br>
+                things right:</p>
+
+                <p><strong>First:</strong> Contact our team.</p>
+                <p><strong>Then:</strong> If an advisor is not able to resolve your query,<br>
+                you can ask for it to be escalated to a specialist or<br>
+                team leader as appropriate.</p>
+                <p><strong>Finally:</strong> If you're still not happy with our decision, you<br>
+                can contact our Operations Manager for an<br>
+                independent review, and you will receive a reply<br>
+                within 5 working days.</p>
+
+                <p>If you have followed the above steps, but your<br>
+                complaint remains unresolved after 8 weeks you can<br>
+                contact the Energy Ombudsman on 0330 440 1624 or<br>
+                at www.energyombudsman.org. This is a free and<br>
+                independent service whose decisions we must abide<br>
+                by.</p>
+            </div>
+        </div>
+
+        <div class="payment-box">
+            <div class="payment-box-header">
+                <div>Your payment options</div>
+                <div>You can read our complaints policy on our website.</div>
+            </div>
+            <div class="payment-box-content">
+                <div class="payment-col">
+                    <h4>Direct Debit</h4>
+                    <p>It's easy to set up a monthly Direct Debit to keep on top of your energy<br>
+                    payments. Simply log on to your online account at www.octopus.energy<br>
+                    to set your Direct Debit up now.</p>
+
+                    <h4>Bank transfer</h4>
+                    <p>Pay us directly from your bank account. Make sure to enter your account<br>
+                    number ({{account_number}}) as the payment reference. Our bank details -<br>
+                    Account number: 44594118 & Sort Code: 40-05-30.</p>
+
+                    <h4>Cheque</h4>
+                    <p style="margin-bottom: 0;">Write your account number ({{account_number}}) on the back, make your cheque<br>
+                    payable to "Octopus Energy Ltd", and post it to: Octopus Energy, UK<br>
+                    House, 5th floor, 164-182 Oxford Street, London, W1D 1NN.</p>
+                </div>
+                <div class="payment-col">
+                    <h4>Credit or Debit Card</h4>
+                    <p>Visit us online at www.octopus.energy/payment to make a payment by<br>
+                    card. Alternatively you can pay by debit card at your local PayPoint with<br>
+                    the barcode below.</p>
+
+                    <h4>Cash</h4>
+                    <p>Simply take this barcode to your local PayPoint to pay by cash. It links to<br>
+                    your account so whatever you pay will be transferred to your account.</p>
+
+                    <div class="barcode">
+                        <div class="barcode-img"></div>
+                        <div class="barcode-number">982602200{{bill_number}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-col">
+                <strong>Octopus Energy Limited</strong>
+                <span>W</span> octopus.energy<br>
+                <span>E</span> hello@octopus.energy<br>
+                <span>P</span> 0808 164 1088
+            </div>
+            <div class="footer-col">
+                <strong>Registered Office</strong>
+                UK House, 5th floor, 164-182 Oxford Street,<br>
+                London, W1D 1NN
+            </div>
+            <div class="footer-col" style="text-align: right;">
+                Registered in England & Wales No. 09263424<br>
+                VAT Number: 358672751
+            </div>
+        </div>
+    </div>
+</div>

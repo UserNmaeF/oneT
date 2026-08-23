@@ -1,0 +1,145 @@
+<template id="pdf-header"><div style="font-size:9px;color:#999;text-align:center;padding:0 20mm;font-family:Arial;width:100%;border-bottom:0.5px solid #eee;padding-bottom:3px;">MariBank&nbsp;|&nbsp;BANK STATEMENT&nbsp;|&nbsp;S/N {{bill_number}}&nbsp;|&nbsp;{{issue_date_display}}</div></template>
+<template id="pdf-footer"><div class="pdf-footer-text" style="font-size:10px;color:#999;text-align:right;padding:0 20mm;font-family:Arial;">page <span class="pageNumber"></span> of <span class="totalPages"></span></div></template>
+
+<div class="seabank-wrap">
+    <div class="statement-page page">
+        <!-- Header -->
+        <div class="header">
+            <div class="brand">
+                <!-- 官方 MariBank 页头 logo（.brand_ref/mb_logo_header.png 实际品牌素材），
+                     替代原手绘 SVG 仿制版；字样为官方 Shopee2021 ExtraBold 专有字体 -->
+                <img class="brand-logo" src="data:image/png;base64,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" alt="MariBank"
+                     style="height:40px;width:auto;display:block;">
+            </div>
+            <div class="statement-meta">
+                BANK STATEMENT<br>
+                {{bill_number}}<br>
+                {{issue_date_display}}
+            </div>
+        </div>
+
+        <!-- Information Section -->
+        <div class="info-grid">
+            <div class="customer-info">
+                <h1>{{customer_name}}</h1>
+                <p>
+                    MARIBANK ACCOUNT: {{account_number}}<br>
+                    {{address_unit}}<br>
+                    {{address_street}}<br>
+                    {{address_barangay}}<br>
+                    {{address_district}} {{postal_code}}<br>
+                    {{country}}
+                </p>
+            </div>
+            <div class="contact-info">
+                <p>Contact Us</p>
+                <p>
+                    Call (+632) 8424 8050<br>
+                    <span class="indent">1800 1024 8050 toll-free</span>
+                    <span class="indent">+63 2 8424 8050 from overseas</span>
+                </p>
+                <p>Email {{contact_email}}</p>
+                <p>Find us on live chat in MariBank app</p>
+                <p>{{bank_head_office}}</p>
+            </div>
+        </div>
+
+        <!-- Account Summary Section -->
+        <div class="section-header">
+            <h2 class="section-title">ACCOUNT SUMMARY</h2>
+            <p class="section-subtitle">{{period_display}}</p>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ACCOUNT</th>
+                        <th class="text-right">STARTING BALANCE ({{currency}})</th>
+                        <th class="text-right">TOTAL OUTGOING ({{currency}})</th>
+                        <th class="text-right">TOTAL INCOMING ({{currency}})</th>
+                        <th class="text-right">ENDING BALANCE ({{currency}})</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SAVINGS</td>
+                        <td class="text-right">{{opening_balance}}</td>
+                        <td class="text-right">{{total_debits}}</td>
+                        <td class="text-right">{{total_credits}}</td>
+                        <td class="text-right">{{closing_balance}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="summary-footer">
+                TOTAL: {{closing_balance}}
+            </div>
+        </div>
+
+        <!-- Transaction Details Section (4列: DATE/TRANSACTION/OUTGOING/INCOMING, 对齐真实2026 MariBank 样本) -->
+        <div class="section-header">
+            <h2 class="section-title">SAVINGS - TRANSACTION DETAILS</h2>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>TRANSACTION</th>
+                        <th class="text-right">OUTGOING ({{currency}})</th>
+                        <th class="text-right">INCOMING ({{currency}})</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{transactions}}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Savings Interest & Tax Details Section (逐日列表,对齐真实 MariBank eStatement 2026 样本) -->
+        <div class="section-header">
+            <h2 class="section-title">SAVINGS - INTEREST &amp; TAX DETAILS*</h2>
+        </div>
+        <div class="table-container interest-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th class="text-right">PREVIOUS DAY BALANCE ({{currency}})</th>
+                        <th class="text-right">GROSS INTEREST ({{currency}})</th>
+                        <th class="text-right">WITHHOLDING TAX ({{currency}})</th>
+                        <th class="text-right">INTEREST ({{currency}})</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{interest_details}}
+                </tbody>
+            </table>
+            <div class="interest-summary">
+                TOTAL INTEREST(NET): {{currency}} {{interest_net}}
+            </div>
+        </div>
+
+        <!-- General / Terms / Legal Section (对齐真实2026 MariBank 样本尾部完整内容) -->
+        <div class="legal-section">
+            <div class="legal-block">
+                <h3>General</h3>
+                <p>This e-Statement is generated by the MariBank system and does not require any official signature. Please examine this statement carefully. If you believe that there is an error or discrepancy in any transaction or balance reflected herein, please notify us through the MariBank App within seven (7) days from receipt of this statement. After such period, the statement shall be deemed correct and accepted.</p>
+            </div>
+
+            <div class="legal-block">
+                <h3>Terms of Service</h3>
+                <p>The Digital Banking Terms and Conditions governing your Savings Account are available for viewing in the MariBank App. MariBank Philippines, Inc. is regulated by the Bangko Sentral ng Pilipinas (BSP). Deposits are insured by the Philippine Deposit Insurance Corporation (PDIC) up to {{currency}} {{pdic_limit_display}} per depositor.</p>
+            </div>
+
+            <div class="legal-block">
+                <h3>Savings - Interest &amp; Tax Details*</h3>
+                <p>Interest is computed daily based on the previous day's savings balance (Previous Day Savings Balance). The applicable rate is {{interest_rate_display}} per annum for balances up to {{currency}} {{pdic_limit_display}}, and {{interest_rate_high_display}} per annum for any amount in excess thereof. Gross interest, withholding tax, and net interest are reflected per day in the Savings - Interest &amp; Tax Details section above.</p>
+                <p>Gross Interest = Previous Day Savings Balance × applicable rate ÷ 365.<br>
+                Withholding Tax = Gross Interest × {{interest_tax_rate_display}}.<br>
+                Net Interest = Gross Interest − Withholding Tax.</p>
+                <p>Illustrative example: for a Previous Day Savings Balance of {{currency}} {{interest_example_balance}}, the Gross Interest is {{currency}} {{interest_example_gross}}, the Withholding Tax is {{currency}} {{interest_example_wt}}, and the Net Interest is {{currency}} {{interest_example_net}}.</p>
+                <p class="legal-effective">*Computation is effective from {{interest_effective_date}}.</p>
+            </div>
+        </div>
+    </div>
+</div>

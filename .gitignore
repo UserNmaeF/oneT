@@ -1,0 +1,42 @@
+# ─── Python 缓存 ───
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ─── 生成产物（账单/截图/测试样本） ───
+# CLI 默认输出目录
+output/
+# 批量生成/测试样本目录（全部为程序生成的 PDF/PNG/HTML）
+tets/
+# UI 开发截图
+page_*.html
+page_*.png
+
+# ─── 遗留代码（已重构废弃，不进入版本库） ───
+_legacy/
+
+# ─── 工具数据 ───
+.zcode/
+
+# ─── 杂项 ───
+# Windows 设备保留名产生的空文件
+nul
+# 编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ─── 系统文件 ───
+Thumbs.db
+.DS_Store
+# ─── 品牌参考素材（外部来源，仅本地参考，不进入版本库） ───
+.brand_ref/
+# 验证输出目录
+_verify/
+
+# 构建临时文件
+_cczd_tmp.html
