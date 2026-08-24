@@ -30,7 +30,7 @@ oneT 账单生成器是一个 Python 桌面工具，用于生成**模拟/样例*
 ## 主要功能
 
 - **7 种账单类型**：涵盖英国、德国、菲律宾三地银行、加密货币与能源账单
-- **GUI 交互**：基于 tkinter 的图形界面（线程安全预览、单实例锁），一键填充、实时预览 PDF/PNG 输出；`main.pyw` 提供无控制台黑窗的启动入口
+- **GUI 交互**：基于 tkinter 的图形界面（线程安全预览、单实例锁），一键填充、实时预览 PDF/PNG 输出；`start_oneT.vbs` 提供无控制台黑窗的启动入口
 - **CLI 命令行**：支持批量生成、数据完整性验证，适合 CI/CD 与自动化测试
 - **地址簿三元绑定**：英国/德国/菲律宾均以内置地址簿整条记录为准（城市-街道-邮编现实组合强绑定，德国街道簿含门牌上限）；randomuser.me 仅作候选来源，返回结果须通过地址簿校验过滤后才会被采用
 - **加密货币实时价格**：从 CoinGecko API 获取历史价格，API 不可用时回退到合理范围
@@ -61,8 +61,17 @@ playwright install chromium
 ### GUI 启动
 
 ```bash
-python main.py    # 或双击 main.pyw（无控制台窗口）
+python main.py
 ```
+
+Windows 下无控制台黑窗启动，双击项目根目录的 `start_oneT.vbs`（或为其创建桌面快捷方式）：
+
+- 启动器显式调用 `pythonw.exe`（无控制台解释器）运行 `main.pyw`，不受系统 `.pyw` 文件关联错误指向 `python.exe` 的影响
+- 若未找到 `pythonw.exe`，按提示编辑脚本内的候选路径即可
+
+> GUI 内置单实例锁：重复启动会弹窗提示。锁采用 Windows 命名互斥体实现，
+> 程序崩溃/被强杀后不会残留误报；若互斥体与端口绑定均不可用（如端口被系统保留），
+> 会放行启动并在控制台输出警告，不会误判为"已在运行"。
 
 ### 命令行使用
 
@@ -133,6 +142,7 @@ python cli.py validate --type gb-monzo
 oneT/
 ├── main.py                  # GUI 入口
 ├── main.pyw                 # 无控制台窗口的 GUI 启动入口
+├── start_oneT.vbs           # Windows 无黑窗启动器（调用 pythonw.exe）
 ├── cli.py                   # CLI 入口（list / gen / validate）
 ├── requirements.txt         # Python 依赖
 ├── config/
